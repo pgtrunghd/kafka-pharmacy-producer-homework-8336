@@ -1,0 +1,6 @@
+Partition:2	MED-001	{"orderId":"e0eb664e-04f8-4dfc-8594-ffece689b83c","medicineId":"MED-001","quantity":2,"timestamp":1793715534.117740000}
+Partition:2	MED-001	{"orderId":"93c87ea6-747e-4aad-975a-664c984f703a","medicineId":"MED-001","quantity":3,"timestamp":1793715534.291776000}
+Partition:2	MED-002	{"orderId":"96f24fad-3594-4527-a4f5-929c2227f011","medicineId":"MED-002","quantity":1,"timestamp":1793715534.295688000}
+Partition:2	MED-001	{"orderId":"2c583132-6318-44cd-8624-63a10233d470","medicineId":"MED-001","quantity":2,"timestamp":"2026-11-03T14:20:29.635810Z"}
+Partition:2	MED-001	{"orderId":"0854faf5-078e-4ad5-834b-9e9e2ce77270","medicineId":"MED-001","quantity":3,"timestamp":"2026-11-03T14:20:29.691664Z"}
+Partition:2	MED-002	{"orderId":"85851ac6-ce9c-4d24-9800-53dcf7a0ba02","medicineId":"MED-002","quantity":1,"timestamp":"2026-11-03T14:20:29.696273Z"}

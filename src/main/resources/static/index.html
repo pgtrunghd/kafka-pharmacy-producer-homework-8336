@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thanh toán đơn hàng thuốc</title>
+<style>body{font:16px system-ui;max-width:640px;margin:60px auto;padding:20px;background:#f4f7fa}label{display:block;margin:16px 0}input,button{font:inherit;padding:10px}button{background:#166534;color:white;border:0;border-radius:6px}pre{white-space:pre-wrap;background:white;padding:20px}</style>
+<h1>Thanh toán đơn hàng thuốc</h1><form id="sale">
+<label>Mã thuốc <input name="medicineId" required value="MED-001"></label>
+<label>Số lượng <input name="quantity" type="number" min="1" step="1" required value="2"></label>
+<button>Thanh toán</button></form><pre id="result" aria-live="polite">Sẵn sàng gửi sự kiện đến Kafka.</pre>
+<script>
+document.getElementById('sale').addEventListener('submit', async e => {
+ e.preventDefault();const form=e.currentTarget,button=form.querySelector('button'),out=document.getElementById('result');
+ button.disabled=true;out.textContent='Đang chờ Kafka xác nhận...';
+ try {const response=await fetch('/api/sales',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({medicineId:form.elements.medicineId.value,quantity:Number(form.elements.quantity.value)})});
+ const data=await response.json();out.textContent=(response.ok?'Thành công':'Gửi thất bại')+'\n'+JSON.stringify(data,null,2);
+ } catch(error){out.textContent='Không kết nối được dịch vụ.';}finally{button.disabled=false;}
+});
+</script></html>
